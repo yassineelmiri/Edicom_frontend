@@ -1,14 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FiHome, FiUser, FiSettings, FiLogOut } from "react-icons/fi";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { RootState } from "../../redux/store";
 import { logout } from "../../redux/slices/authSlice";
 
 const Dashboard = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { user } = useSelector((state: RootState) => state.auth);
 
     const handleLogout = () => {
         dispatch(logout());
